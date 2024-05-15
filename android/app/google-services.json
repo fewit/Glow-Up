@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "427314156133",
+    "project_id": "glow-u-p-dskwjr",
+    "storage_bucket": "glow-u-p-dskwjr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427314156133:android:5040031f54704fae76ac8c",
+        "android_client_info": {
+          "package_name": "com.clean.iron"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAL-XRLO7TimhNuWqopMjg9skn-U0eLyks"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
