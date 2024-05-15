@@ -1,0 +1,60 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "Glow_Up_Post",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Glow_Up_IsVideo",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Glow_Up_Hot",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Glow_Up_Post",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Glow_Up_IsVideo",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Glow_Up_CreateUser",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Glow_Up_PostComment",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Glow_Up_Post",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Glow_Up_CreateUser",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Glow_Up_ChatMessages",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Glow_Up_ChatRoom",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Glow_Up_SendTime",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ]
+}

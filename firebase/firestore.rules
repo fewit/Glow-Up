@@ -1,0 +1,39 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /Glow_Up_User/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if request.auth != null;
+      allow delete: if request.auth != null;
+    }
+
+    match /Glow_Up_Post/{document} {
+      allow create: if request.auth != null;
+      allow read: if true;
+      allow write: if request.auth != null;
+      allow delete: if resource.data.Glow_Up_CreateUser == /databases/$(database)/documents/Glow_Up_User/$(request.auth.uid);
+    }
+
+    match /Glow_Up_PostComment/{document} {
+      allow create: if request.auth != null;
+      allow read: if true;
+      allow write: if request.auth != null;
+      allow delete: if resource.data.Glow_Up_CreateUser == /databases/$(database)/documents/Glow_Up_User/$(request.auth.uid);
+    }
+
+    match /Glow_Up_Chat/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if /databases/$(database)/documents/Glow_Up_User/$(request.auth.uid) in resource.data.Glow_Up_ChatUsers;
+      allow delete: if /databases/$(database)/documents/Glow_Up_User/$(request.auth.uid) in resource.data.Glow_Up_ChatUsers;
+    }
+
+    match /Glow_Up_ChatMessages/{document} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null;
+      allow write: if request.auth != null;
+      allow delete: if resource.data.Glow_Up_SendUser == /databases/$(database)/documents/Glow_Up_User/$(request.auth.uid);
+    }
+  }
+}
